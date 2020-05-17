@@ -11,11 +11,13 @@ class Donasi extends Model {
     // Method untuk memasukkan data transaksi kedalam database
     public static function create($data) {
         try {
+            // Informasi-informasi pada $data diambil terlebih dahulu
             $db = static::getDb();
             $id_transaksi = static::getLatestIdTransaksi();
             $id_transaksi = $id_transaksi+1;
             $donatur = $data['donatur'];
             $email_donatur = $data['email_donatur'];
+            // Loop pada tiap entry $data['donasi'] untuk memasukkannya kedalam database 
             foreach ($data['donasi'] as $entry) {
                 $sql = "INSERT INTO donasi VALUES('', :id_transaksi, :donatur, :email_donatur, :id_kategori, :deskripsi, :kuantitas, CURRENT_TIMESTAMP)";
                 $stmt = $db->prepare($sql);
@@ -39,6 +41,7 @@ class Donasi extends Model {
     // Method untuk mendapatkan seluruh entry donasi pada database
     public static function getAll() {
         try {
+            // kolom pada tabel donasi dan nama kategori yang bersangkutan akan di ambil dari database
             $db = static::getDb();
             $stmt = $db->query(
                 'SELECT 
@@ -62,6 +65,7 @@ class Donasi extends Model {
     // Method untuk mendapatkan entry donasi berdasarkan kategori pada database
     public static function getByCategory($id_kategori) {
         try {
+            // Sama seperti method getAll(), tetapi terdapat klausa untuk mengecek id_kategori yang diinputkan
             $db = static::getDb();
             $stmt = $db->prepare('SELECT 
                 donasi.id,
@@ -85,6 +89,7 @@ class Donasi extends Model {
     // Method untuk mendapatkan id_transaksi terbaru
     public static function getLatestIdTransaksi() {
         try {
+            // Disini akan mengambil id_transaksi dengan value tertinggi (terbaru).
             $db = static::getDb();
             $stmt = $db->prepare("SELECT id_transaksi FROM donasi ORDER BY id_transaksi DESC LIMIT 1");
             $stmt->execute();

@@ -10,6 +10,7 @@ class Kategori extends Model {
     // Method untuk mendapatkan nama_kategori berdasarkan id
     public static function getById($id) {
         try {
+            // Disini akan mengambil nama_kategori sesuai dengan klausa id yang diinputkan
             $db = static::getDb();
             $stmt = $db->prepare('SELECT nama_kategori FROM kategori WHERE id = :id');
             $stmt->bindParam(':id', $id);
@@ -24,6 +25,7 @@ class Kategori extends Model {
     // Method untuk mendapatkan seluruh entry kategori pada database
     public static function getAll() {
         try {
+            // Mendapatkan semua data pada tabel kategori
             $db = static::getDb();
             $stmt = $db->query('SELECT * FROM kategori');
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
