@@ -46,7 +46,7 @@ Pada model **`Donasi`** terdapat beberapa method:
 
 Pada model **`Kategori`** terdapat beberapa method:
 * **`getById()`**: digunakan untuk mendapatkan `nama_kategori` berdasarkan `id` yang diinputkan.
-* **`getAll`**: digunakan untuk mendapatkan seluruh entry pada tabel **`Kategori`**.
+* **`getAll()`**: digunakan untuk mendapatkan seluruh entry pada tabel **`Kategori`**.
 
 ## Views
 
