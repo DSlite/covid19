@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Donasi{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <!-- Header Block -->
+    <div class="row">
+        <h2>Donasi Covid-19</h2>
+    </div>
+
+    <!-- Flashcard Block -->
+    <div class="row">
+        <div class="col-8">
+          {{ flash.flash() }}
+        </div>
+    </div>
+
+    <!-- Form Block -->
+    <div class="row">
+        <div class="col-8">
+            <form action = "{{ BASE_URL }}/donasi/home" method="POST">
+                <div class="form-group">
+                    <label for="donatur">Donatur</label>
+                    <input type="text" class="form-control" id="donatur" name="donatur" placeholder="Masukkan namamu" autocomplete="off" aria-required="true" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_donatur">Email Donatur</label>
+                    <input type="email" class="form-control" id="email_donatur" name="email_donatur" placeholder="Masukkan alamat emailmu" autocomplete="off" aria-required="true" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
