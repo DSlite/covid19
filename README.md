@@ -1,4 +1,4 @@
-# Final Project - Pemrograman Integratif
+# EAS Pemrograman Integratif
 
 Oleh: I Made Dindra Setyadharma (05311840000008)
 
