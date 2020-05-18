@@ -4,6 +4,10 @@ Oleh: I Made Dindra Setyadharma (05311840000008)
 
 ---
 
+## Penjelasan
+
+Aplikasi ini merupakan aplikasi untuk melakukan rekapitulasi terhadap data sumbangan donasi covid-19. Dalam aplikasi ini kita bisa mengisi data mengenai donatur dan donasi-donasi yang diberikannya pada satu kali transaksi sesuai dengan kategori, keterangan, dan jumlah tiap donasi. Selain itu terdapat bagian untuk melihat rekap data donasi tersebut berdasarkan kategori donasi.
+
 ## Setup
 
 * Database terdapat pada link berikut: [Database](https://github.com/DSlite/covid19/blob/master/covid19.sql)
